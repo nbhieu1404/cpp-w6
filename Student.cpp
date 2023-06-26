@@ -15,18 +15,18 @@ public:
     }
     void input();
     void output();
-    // ~Student();
+    ~Student(){}
 };
 void Student::input()
 {
-    cout << "Nhap ma SV: ";
+    cout << "Student ID: ";
     cin.ignore();
     getline(cin, id);
 
-    cout << "Nhap ho va ten: ";
+    cout << "Enter name: ";
     getline(cin, name);
 
-    cout << "Nhap diem trung binh: ";
+    cout << "Enter average: ";
     cin >> avgScore;
 }
 void Student::output()
@@ -38,20 +38,20 @@ void Student::output()
 int main()
 {
     Student sv1, sv2;
-    cout << "Nhap thong tin sinh vien 1:" << endl;
+    cout << "Enter informatinon student 1:" << endl;
     sv1.input();
 
-    cout << "\nNhap thong tin sinh vien 2:" << endl;
+    cout << "\nEnter informatinon student 2:" << endl;
     sv2.input();
 
-    cout << "\nThong tin sinh vien vua nhap:" << endl;
-    cout << "\nSinh vien 1:" << endl;
+    cout << "\nInformatinon student:" << endl;
+    cout << "\nStudent 1:" << endl;
     sv1.output();
 
-    cout << "\nSinh vien 2:" << endl;
+    cout << "\nnStudent 2:" << endl;
     sv2.output();
 
-    cout << "\nSinh vien sap xep theo diem trung binh giam dan:" << endl;
+    cout << "\nDesc Average:" << endl;
     if (sv1.getAvgScore() >= sv2.getAvgScore())
     {
         sv1.output();
