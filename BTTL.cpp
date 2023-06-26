@@ -82,7 +82,7 @@ int main()
     cin >> n;
     cin.ignore();
     const int soLuong = n;
-    student st[soLuong];
+    student st[100];
     for (int i = 0; i < n; i++)
     {
         cout << "Enter the student's information number " << i + 1 << ": " << endl;

@@ -21,6 +21,7 @@ protected:
         cout << "\nName: " << name;
         cout << "\nAge: " << age;
     }
+    virtual bool isExcellent() = 0;
 };
 class Student : public Person
 {
@@ -34,6 +35,11 @@ public:
         age = 0;
         avgScore = 0;
     }
+    Student(string name, int age, float avgScore){
+        this->name = name;
+        this->age = age;
+        this->avgScore = avgScore;
+    }
     void inputStudent()
     {
         cout << "Enter student's name: ";
@@ -44,10 +50,11 @@ public:
         cout << "Enter student's average score: ";
         cin >> avgScore;
     }
-    bool isExcellentStudent()
+    bool isExcellent()
     {
         return (avgScore > 9.5);
     }
+
     void output()
     {
         Person::output();
@@ -78,7 +85,7 @@ public:
         cin >> numPublications;
     }
 
-    bool isExcellentProfessor()
+    bool isExcellent()
     {
         return (numPublications >= 100);
     }
@@ -99,7 +106,7 @@ int main()
     for (int i = 0; i < n; ++i)
     {
         bool check;
-        cout << "\nPerson " << i+1 << endl;
+        cout << "\nPerson " << i + 1 << endl;
         cout << "1: Student\n0: Professor\nAnswer: ";
         cin >> check;
         if (check == 0)
@@ -113,10 +120,10 @@ int main()
             s++;
         }
     }
-    cout << "\nInformation professors excellent: \n";
+    cout << "\nInformation professors excellent: ";
     for (int i = 0; i < p; i++)
     {
-        if (professor[i].isExcellentProfessor())
+        if (professor[i].isExcellent())
         {
             professor[i].output();
         }
@@ -125,7 +132,7 @@ int main()
     cout << "\n\nInformation students excellent: ";
     for (int i = 0; i < s; i++)
     {
-        if (student[i].isExcellentStudent())
+        if (student[i].isExcellent())
         {
             student[i].output();
         }
